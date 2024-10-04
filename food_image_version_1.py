@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/17dwc65VbQXylD6MSo6RXSiM2cNPZp_6q
 """
 
-!nvidia-smi
+
 
 """### PIZZA & STEAK"""
 
@@ -77,31 +77,15 @@ Eg: {
 
 """#### Let's deploy some data for our project experiment"""
 
-!pip install kaggle
 
 from google.colab import files
 files.upload()
-
-!mkdir -p ~/.kaggle
-!cp kaggle.json ~/.kaggle/
-!chmod 600 ~/.kaggle/kaggle.json
-
 #!kaggle datasets download -d dansbecker/food-101
 
 #!unzip food-101.zip
 
-!kaggle datasets download -d siddheshbharapte/pizza-steak
-
-!unzip pizza-steak.zip
-
-
 
 """#### Inspect the data ..."""
-
-!ls pizza_steak/train/steak
-
-!ls -la pizza_steak
-
 import os
 for dirpath, dirnames, filenames in os.walk("pizza_steak"):
   print(f"There are {len(dirnames)} directories and {len(filenames)} images in {dirpath}")
